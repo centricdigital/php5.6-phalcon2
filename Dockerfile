@@ -29,7 +29,7 @@ RUN docker-php-ext-install pdo \
     pdo_mysql \
     zip \
     intl \
-    && docker-php-ext-install
+    && docker-php-ext-configure intl
 
 # Compile Phalcon
 RUN set -xe && \
@@ -38,7 +38,7 @@ RUN set -xe && \
         docker-php-ext-enable phalcon && \
         cd ../.. && rm -rf phalcon-v${PHALCON_VERSION}.tar.gz cphalcon-phalcon-v${PHALCON_VERSION}
 
-# Clean Build
+
 RUN apt-get -y autoremove && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
