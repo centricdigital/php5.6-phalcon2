@@ -1,4 +1,4 @@
-# php5.6-phalcon2
+# PHP 5.6 Phalcon 2.0.13
 
 - Apache
 - Php 5.6
