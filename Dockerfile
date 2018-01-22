@@ -3,7 +3,7 @@ FROM php:5.6-apache
 # Set Phalcon Version
 ENV PHALCON_VERSION=2.0.13
 
-RUN a2enmod rewrite
+RUN a2enmod rewrite expires headers
 
 # Download Node 6.x & Yarn & Install
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - \
