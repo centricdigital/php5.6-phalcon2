@@ -30,6 +30,10 @@ RUN docker-php-ext-install pdo \
     zip \
     intl \
     && docker-php-ext-configure intl
+    
+# Enable Memcache
+RUN pecl install memcache && \
+    echo extension=memcache.so >> /usr/local/etc/php/conf.d/memcache.ini
 
 # Compile Phalcon
 RUN set -xe && \
